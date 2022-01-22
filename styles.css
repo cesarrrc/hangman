@@ -1,0 +1,245 @@
+*{
+    text-align: center;
+}
+
+/* Keyboard styles */
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row div {
+    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 10%;
+    width: 50px;
+    height: 50px;
+    margin: 10px 10px 10px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 2px 2px black;
+    cursor: pointer;
+}
+
+.row div:active{
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+/* Hangman Stickman Styles */
+
+.hang-man{
+    display: flex;
+    justify-content: center;
+    background-color: skyblue;
+}
+.game-container{
+    height: 300px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.pole{
+    border-right: 8px gray solid;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
+.topPole{
+    border-top: 8px gray solid;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    
+}
+.rope{
+    border-left: 8px solid brown;
+    grid-column-start: 4;
+    grid-row-start:1;
+    grid-row-end: 2;
+}
+
+.head{
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start:2;
+    grid-row-end: 3;
+    margin-left: 50px;
+    margin-right: 40px;
+}
+
+.body{
+    border-left: 4px solid black;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start:3;
+    grid-row-end: 4;
+}
+
+.leftArm{
+    width: 3px;
+    height: 40px;
+    background-color: black;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start:3;
+    grid-row-end: 4;
+    transform: rotate(60deg);
+    transform-origin: 800% 200%;
+}
+
+.rightArm{
+    width: 3px;
+    height: 40px;
+    background-color: black;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start:3;
+    grid-row-end: 4;
+    transform: rotate(120deg);
+    transform-origin: -1100% 18%;
+}
+
+.leftLeg{
+    width: 3px;
+    height: 40px;
+    background-color: black;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start:4;
+    grid-row-end: 5;
+    transform: rotate(40deg);
+    transform-origin: 1500% 275%;
+}
+
+.rightLeg{
+    width: 3px;
+    height: 40px;
+    background-color: black;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start:4;
+    grid-row-end: 5;
+    transform: rotate(140deg);
+    transform-origin: -1020% 13%;
+}
+
+/* Guess Array */
+
+.guess-array{
+    display: flex;
+    justify-content: center;
+}
+
+/* Bottom Container */
+.bottom-container{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+/* Guesses Box */
+
+.guesses{
+    width: 150px;
+    height: 200px;
+    background-color: thistle;
+    box-shadow: 2px 2px 8px;
+    border-radius: 10px;
+
+}
+
+.alphabet-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Guesses Grid */
+
+.guess-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.guess{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.guess-grid:last-child{
+    /* display: flex; */
+}
+
+/* Match Results */
+
+.matchResult  {
+    background-color: rgba(0, 139, 139, 0.897);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultContainer {
+    margin-top: 200px;
+    animation: result-logo-spin infinite 10s linear;
+    width: 200px;
+    height: 200px;
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.reset{
+    margin-top: 30px;
+}
+
+@keyframes result-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Media Queries */
+
+@media(max-width: 900px){
+
+
+    .row div {
+        font-size: 18px;
+        border: 1px solid black;
+        border-radius: 10%;
+        width: 25px;
+        height: 25px;
+        margin: 5px 5px 5px ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 2px 2px 2px black;
+    }
+
+    .guesses{
+        width: 100px;
+        height: 150px;
+    }
+}
+
+  
